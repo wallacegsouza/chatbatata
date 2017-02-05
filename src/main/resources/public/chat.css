@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0;
+    font-family: "Verdana";
+    outline: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 14px;
+    color: 333;
+    background-image: url(http://www.trbimg.com/img-57853459/turbine/sfl-heres-where-to-get-free-fries-for-national-french-fry-day-on-wednesday-20160712);
+    background-size: cover;
+}
+html, body {width: 100vw; height: 100vh;}
+
+body {
+    color: #ffffff;
+    line-height: 1.3;
+    overflow: hidden;
+    background-image: linear-gradient(#fffa63, #ff3800);
+}
+
+body.batata {background-image: none;}
+
+h1 {
+    position: absolute;
+    font-family: "Comic Sans MS";
+    font-size: 4rem;
+    text-align: center;
+    top: 8vw;
+    width: 100%;
+    animation: batata 1s alternate infinite;
+    transition: all 1s;
+    z-index: 999;
+    text-shadow: .2rem .2rem .2rem rgba(0,0,0,.5);
+}
+
+body.chat h1 {
+    width: auto;
+    font-size: 1.4rem;
+    left: 10vw;
+    top: 9vh;
+    animation: none;
+    color: red;
+    z-index: 0;
+    text-shadow: 1px 1px 1px yellow;
+}
+
+body.chat.batata h1 {color: yellow; text-shadow: 1px 1px 1px red;}
+
+#chat {
+    width: 80vw;
+    margin: auto;
+    padding-top: 12vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+body.chat #chat {visibility: visible; opacity: 1}
+body.chat #login {display: none;}
+
+#logo { 
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    animation: loading .5s forwards .1s;
+}
+
+#nome {
+    position: absolute;
+    top: 55vh;
+    left: 40vw;
+    width: 20vw;
+    box-shadow: 2px 2px  4rem #333;
+}
+
+.icone {
+    width: 2rem; 
+    height: 2rem;
+    display: inline-block;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: .4rem;
+}
+
+#viewmsg, #texto, #nome, #logo, #upload {border-radius: 3px;}
+#viewmsg, #texto, #nome, #upload {padding: .6rem; border: none;}
+
+#viewmsg, #texto, .msg {
+    border-radius: 2px;
+    padding: .6rem;
+}
+
+#viewmsg, #texto, .browser, .msg {
+    border-radius: 2px;
+}
+
+#viewmsg {
+    position: relative;
+    text-align: left;
+    height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-image:linear-gradient(hsla(0,0%,100%, .85), hsla(0,0%,88%, .85));
+    cursor: text;
+}
+
+#viewmsg, #texto {width: 100%;}
+
+#texto {resize: none; height: 3.8rem; margin-top: 1em;background-color: hsla(0,0%,100%, .85);}
+#texto:focus {box-shadow: 0 0 1em yellow;}
+
+#upload {
+    cursor: pointer;
+    width: 130px;
+    height: 120px;
+    background: url(http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/arrow-upload-icon.png) no-repeat 4px 50%;
+    background-size: auto 120px;
+    position: absolute;
+    bottom: 3.5vh;
+    right: 8.5vw;
+    display: block;
+    opacity: .5;
+    transition: all .2s;
+}
+
+#upload:hover {opacity: .9; bottom: 4vh; right: 9vw;}
+
+img.batata {
+    position: fixed;
+    top: 13vh;
+    right: 12vw;
+    opacity: .2;
+    display: none;
+}
+
+.msg, .browser {margin-bottom: .4rem; float: left; clear: left;}
+.msg i, .browser {font-size: .8rem; }
+
+.browser {
+    border: solid 1px #ead8b7;
+    color: #a38856;
+    background-color: #fffcda;
+    width: 100%;
+    padding: .2em;
+    vertical-align: middle;
+}
+
+.browser u {font-size: 1.2rem;display: inline-block;margin-right:.2em;color: #ff7500;}
+
+.msg {
+    border: solid 1px;
+    opacity: 1;
+    transition: all .5s;
+}
+.msg.animated {width: 0; height: 0; opacity: 0;}
+
+#git {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16vw;
+    height: auto;
+    transition: width .3s, height .3s;
+}
+
+#git:hover {width: 18vw;}
+
+
+@keyframes batata {
+    from {color: #fc00ff; transform: rotateY(30deg);} 
+    to {color: #00fffd; transform: rotateX(20deg);}
+}
+
+@keyframes loading { to {opacity: 1;} }
+
+
+audio { vertical-align: middle; }
